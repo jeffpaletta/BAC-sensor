@@ -142,8 +142,10 @@ function getBACEffects(bac_result) {
 	bac_num = Math.round(bac_result*100)/100; // round to 2 decimal places
 	if (bac_num < 0.02) {
 		effects = "Not impaired";
+/*
 		var bgColor = document.querySelector('body');
 		bgColor.style.backgroundColor = "#358d9d";
+*/
 	} else if (bac_num >= 0.02 && bac_num <= 0.03) {
 		effects = "Mildly relaxed ";
 	} else if (bac_num >= 0.04 && bac_num <= 0.06) {

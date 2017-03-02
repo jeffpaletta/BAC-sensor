@@ -7,19 +7,14 @@ div.ui-slider-track {
 
 
 
+/*
 
 body, div {
 	width: 100%;
 	height: 100%;
-/* 	background-color: white !important; */
 }   
 
 div.alcohol-level {
-/* 	margin-top: 15%; */
-/* 	margin-left: 10%; */
-/* 	width: 100%; */
-/* 	height: 33%; */
-/* 	display: block; */
 }
 
 div#bac-level-wrapper {
@@ -40,6 +35,7 @@ div#bac-effects-wrapper {
 }
 
 span.effects {
+	color: white;
 	font-size: 36px;
-/* 	margin-top: 80px; */
 }
+*/
