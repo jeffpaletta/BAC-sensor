@@ -1,0 +1,13 @@
+input.ui-slider-input {
+  display: none !important;
+}
+div.ui-slider-track {
+  margin: 0 15px !important;
+}
+
+
+
+
+body, div {
+/* 	background-color: red !important; */
+}
