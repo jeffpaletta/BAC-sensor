@@ -9,5 +9,37 @@ div.ui-slider-track {
 
 
 body, div {
-/* 	background-color: red !important; */
+	width: 100%;
+	height: 100%;
+/* 	background-color: white !important; */
+}   
+
+div.alcohol-level {
+/* 	margin-top: 15%; */
+/* 	margin-left: 10%; */
+/* 	width: 100%; */
+/* 	height: 33%; */
+/* 	display: block; */
+}
+
+div#bac-level-wrapper {
+	padding-top: 80px;
+	padding-left: 100px;
+}
+
+span.result {
+	font-size: 120px;
+	margin-top: 80px;
+}
+
+div#bac-effects-wrapper {
+	padding-top: 20px;
+	text-align: center;
+	width: 100%;
+	
+}
+
+span.effects {
+	font-size: 36px;
+/* 	margin-top: 80px; */
 }

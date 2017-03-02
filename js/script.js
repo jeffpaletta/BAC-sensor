@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+	getBloodAlcoholLevel();
 	$("#beerButton").on("click", function() {
 		var counter = $('#beerCounter').val();
 		counter++;
@@ -20,10 +21,23 @@ $( document ).ready(function() {
 	
 	
 	
-	
-	$("#gender").on("change", function() {
+
+	$("#genderButton").on("click", function() {
+		var current = $('#currentGender').val();
+		if (current === "female") {
+			$('#currentGender').val("male");
+		}
+		else {
+			$('#currentGender').val("female");
+		}
 		getBloodAlcoholLevel();
 	});
+	
+	
+	
+	
+	
+	
 	
 	
 	$("#weightButtonAdd").on("click", function() {
@@ -45,14 +59,7 @@ $( document ).ready(function() {
 	});
 	
 	
-	
-	
-/*
-	$("#time").on("change", function() {
-		getBloodAlcoholLevel();
-	});
-*/
-	
+		
 	
 	
 	$("#timeButtonAdd").on("click", function() {
@@ -76,7 +83,7 @@ $( document ).ready(function() {
 		$('#beerCounter').val(0);
 		$('#wineCounter').val(0);
 		$('#liquorCounter').val(0);
-		$('#gender').val("male");
+		$('#currentGender').val("male");
 		$('#weightCounter').val(150);
 		$('#timeCounter').val(0);
 		getBloodAlcoholLevel();
@@ -96,7 +103,7 @@ function getBloodAlcoholLevel() {
 	num_beer =  $("#beerCounter").val();
 	num_wine = $("#wineCounter").val();
 	num_shots = $("#liquorCounter").val();
-	gender = $("#gender").val();
+	gender = $("#currentGender").val();
 	switch(gender) {
 		case 'male':
 			gender_const = 0.73; // male water level constant   
@@ -135,6 +142,8 @@ function getBACEffects(bac_result) {
 	bac_num = Math.round(bac_result*100)/100; // round to 2 decimal places
 	if (bac_num < 0.02) {
 		effects = "Not impaired";
+		var bgColor = document.querySelector('body');
+		bgColor.style.backgroundColor = "#358d9d";
 	} else if (bac_num >= 0.02 && bac_num <= 0.03) {
 		effects = "Mildly relaxed ";
 	} else if (bac_num >= 0.04 && bac_num <= 0.06) {

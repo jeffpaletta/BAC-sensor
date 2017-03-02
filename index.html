@@ -5,25 +5,28 @@
   <title>How Drunk Youz Iz?</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel='stylesheet prefetch' href='https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css'>
+<!--   <link rel='stylesheet prefetch' href='https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css'> -->
       <link rel="stylesheet" href="css/style.css">
   
 </head>
 
 <body>
 <div data-role="page">
-<!--
-  <div data-role="header">
-    <h1>Ders is Gay</h1>
-  </div>
--->
-  <div data-role="main" class="ui-content">
+  <div data-role="main" class="ui-content" id="mainWrapper">
     <div class="ui-body ui-body-a ui-corner-all">
       <div class="calculator">
+	      
+	    <div class="alcohol-level">
+          <div id="bac-level-wrapper">
+            <span id="bac-level" class="result"></span>
+          </div>
+          <div id="bac-effects-wrapper">
+            <span id="bac-effects" class="effects"></span>
+          </div>
+        </div>  
         
         <div class="alcohol-form">
           <form method="post" action="">
-	          
 	          
 	          
             <fieldset>
@@ -32,11 +35,9 @@
               <input type="text" name="beerCounter" id="beerCounter" value="0" />
               <input type="button" name="beer" id="beerButton" value="+" data-show-value="true" data-highlight="true">                            
               
-              
               <label for="wine">Glasses of Wine (5 fl oz)</label>
               <input type="text" name="wineCounter" id="wineCounter" value="0" />
               <input type="button" name="wine" id="wineButton" value="+" data-show-value="true" data-highlight="true">                            
-              
               
               <label for="liquor">Shots of Liquor (1.5 fl oz)</label>
               <input type="text" name="liquorCounter" id="liquorCounter" value="0" />
@@ -44,42 +45,40 @@
             
             </fieldset>   
             
-            
-            
-            
                                  
+<!--
             <label for="gender">Select Gender</label>
             <select name="gender" id="gender">
               <option value="male" selected="selected">Male</option>
               <option value="female">Female</option>
             </select>                        
-            
-            
+-->
+            <label for="gender">Select Gender</label>
+            <input type="text" name="gender" id="currentGender" value="male" />
+            <input type="button" name="genderButton" id="genderButton" value="Change Gender" data-show-value="true" data-highlight="true">             
+             
+             
+             
             
             <label for="weight">Enter Weight (lbs)</label>
             <input type="text" name="weightCounter" id="weightCounter" value="150" />
-            <input type="button" name="weight" id="weightButtonAdd" value="+" data-show-value="true" data-highlight="true">  
-            <input type="button" name="weight" id="weightButtonSubtract" value="-" data-show-value="true" data-highlight="true">                       
-            
-            
-            
+            <input type="button" name="weightUp" id="weightButtonAdd" value="+" data-show-value="true" data-highlight="true">  
+            <input type="button" name="weightDown" id="weightButtonSubtract" value="-" data-show-value="true" data-highlight="true">                       
             
             
             <label for="time">Total Time Drinking (hrs)</label>
-            <input type="number" name="time" id="time" value="0" min="0" class="required">
+            <input type="text" name="timeCounter" id="timeCounter" value="0" />
+            <input type="button" name="timeUp" id="timeButtonAdd" value="+" data-show-value="true" data-highlight="true">  
+            <input type="button" name="weight" id="timeButtonSubtract" value="-" data-show-value="true" data-highlight="true"> 
             
             
             <input type="button" name="reset" id="resetButton" value="reset" data-show-value="true" data-highlight="true">
+            
+            
+            
           </form>
         </div>
-        <div class="alcohol-level">
-          <div>
-            <span class="label">Alcohol Level:</span>&nbsp;<span class="result"></span>
-          </div>
-          <div>
-            <span class="label">Alcohol Effects:</span>&nbsp;<span class="effects"></span>
-          </div>
-        </div>    
+            
       </div>    
     </div>
   </div>
