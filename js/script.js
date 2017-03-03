@@ -19,8 +19,6 @@ $( document ).ready(function() {
 		getBloodAlcoholLevel();
 	});
 	
-	
-	
 
 	$("#genderButton").on("click", function() {
 		var current = $('#currentGender').val();
@@ -32,13 +30,6 @@ $( document ).ready(function() {
 		}
 		getBloodAlcoholLevel();
 	});
-	
-	
-	
-	
-	
-	
-	
 	
 	$("#weightButtonAdd").on("click", function() {
 		var counter = $('#weightCounter').val();
@@ -56,11 +47,7 @@ $( document ).ready(function() {
 		counter= (counter - 5);
 		$('#weightCounter').val(counter);
 		getBloodAlcoholLevel();
-	});
-	
-	
-		
-	
+	});	
 	
 	$("#timeButtonAdd").on("click", function() {
 		var counter = $('#timeCounter').val();
@@ -74,10 +61,7 @@ $( document ).ready(function() {
 		counter= (counter - 1);
 		$('#timeCounter').val(counter);
 		getBloodAlcoholLevel();
-	});
-	
-	
-	
+	});	
 	
 	$("#resetButton").on("click", function() {
 		$('#beerCounter').val(0);
@@ -91,15 +75,9 @@ $( document ).ready(function() {
 	   
 });   
 
-
-
-/** 
- * function  getBloodAlcoholLevel()
- * Get values
- */
  
 function getBloodAlcoholLevel() {
-	var num_beer, num_wine, num_shots, gender, gender_const, weight_lbs, total_time, bac_result, bac_round, bac_status;
+	var num_beer, num_wine, num_shots, gender, gender_const, weight_lbs, total_time, bac_result, bac_round, bac_effects, bac_status;
 	num_beer =  $("#beerCounter").val();
 	num_wine = $("#wineCounter").val();
 	num_shots = $("#liquorCounter").val();
@@ -122,8 +100,10 @@ function getBloodAlcoholLevel() {
 	if( (bac_result == Math.abs(bac_result)) || (resultIsNan !== true) ) { 
 		bac_round = Math.round(bac_result*1000)/1000; // round to 3 decimal places	 	
 		$('.result').text(bac_round.toFixed(3));
-		bac_status = getBACEffects(bac_result);
-		$('.effects').text(bac_status.toString());
+		bac_effects = getBACEffects(bac_result);
+		bac_status = getBACStatus(bac_result);
+		$('.effects').text(bac_effects.toString());
+		$('.status').text(bac_status.toString());
 	}
 };
 
@@ -140,30 +120,135 @@ function getBACResult(num_beer, num_wine, num_shots, weight_lbs, gender_const, t
 function getBACEffects(bac_result) {
 	var effects, bac_num;
 	bac_num = Math.round(bac_result*100)/100; // round to 2 decimal places
+	
 	if (bac_num < 0.02) {
 		effects = "Not impaired";
+		
 		var bgColor = document.querySelector('body');
 		bgColor.style.backgroundColor = "#358d9d";
-	} else if (bac_num >= 0.02 && bac_num <= 0.03) {
+	} 
+	
+	else if (bac_num >= 0.02 && bac_num <= 0.03) {
 		effects = "Mildly relaxed ";
-	} else if (bac_num >= 0.04 && bac_num <= 0.06) {
-		effects = "Some minor impairment";   
-	} else if (bac_num >= 0.07 && bac_num <= 0.09) {
-		effects = "Slight impairment";     
-	} else if (bac_num >= 0.10 && bac_num <= 0.12) {
-		effects = "Significant impairment";   
-	} else if (bac_num >= 0.13 && bac_num <= 0.14) {
-		effects = "Significant impairment";  	
-	} else if (bac_num >= 0.15 && bac_num <= 0.19) {
+		
+		var bgColor = document.querySelector('body');
+		bgColor.style.backgroundColor = "#ff2000";
+	} 
+	
+	else if (bac_num >= 0.04 && bac_num <= 0.06) {
+		effects = "Some minor impairment";
+		 
+		var bgColor = document.querySelector('body');
+		bgColor.style.backgroundColor = "#3233ff";  
+	} 
+	
+	else if (bac_num >= 0.07 && bac_num <= 0.09) {
+		effects = "Slight impairment";  
+		 
+		var bgColor = document.querySelector('body');
+		bgColor.style.backgroundColor = "#3233ff";
+		   
+	} 
+	
+	else if (bac_num >= 0.10 && bac_num <= 0.12) {
+		effects = "Significant impairment";  
+		 
+		var bgColor = document.querySelector('body');
+		bgColor.style.backgroundColor = "#3233ff"; 
+	} 
+	
+	else if (bac_num >= 0.13 && bac_num <= 0.14) {
+		effects = "Significant impairment";  
+		 
+		var bgColor = document.querySelector('body');
+		bgColor.style.backgroundColor = "#3233ff";	
+	} 
+	
+	else if (bac_num >= 0.15 && bac_num <= 0.19) {
 		effects = "Dysphoria";   
-	} else if (bac_num >= 0.20 && bac_num <= 0.24) {
+		 
+		var bgColor = document.querySelector('body');
+		bgColor.style.backgroundColor = "#3233ff";
+	} 
+	
+	else if (bac_num >= 0.20 && bac_num <= 0.24) {
 		effects = "Disoriented";  
-	} else if (bac_num >= 0.25 && bac_num <= 0.29) {
-		effects = "Severe impairment";  		
-	} else if (bac_num >= 0.30 && bac_num <= 0.39) {
-		effects = "Coma is possible";     
-	} else if (bac_num >= 0.40) {
-		effects = "Onset of coma";    
+		 
+		var bgColor = document.querySelector('body');
+		bgColor.style.backgroundColor = "#3233ff";
+	} 
+	
+	else if (bac_num >= 0.25 && bac_num <= 0.29) {
+		effects = "Severe impairment";
+		 
+		var bgColor = document.querySelector('body');
+		bgColor.style.backgroundColor = "#3233ff";  		
+	} 
+	
+	else if (bac_num >= 0.30 && bac_num <= 0.39) {
+		effects = "Coma is possible";   
+		 
+		var bgColor = document.querySelector('body');
+		bgColor.style.backgroundColor = "#3233ff";  
+	} 
+	
+	else if (bac_num >= 0.40) {
+		effects = "Onset of coma";  
+				 
+		var bgColor = document.querySelector('body');
+		bgColor.style.backgroundColor = "#3233ff";  
 	}
 	return effects;
+}
+
+
+
+function getBACStatus(bac_result) {
+	var status, bac_num;
+	bac_num = Math.round(bac_result*100)/100; // round to 2 decimal places
+	
+	if (bac_num < 0.02) {
+		status = "Eatin' Ass";
+	} 
+	
+	else if (bac_num >= 0.02 && bac_num <= 0.03) {
+		status = "Eatin' Booty";
+	} 
+	
+	else if (bac_num >= 0.04 && bac_num <= 0.06) {
+		status = "Eatin' Booty";
+	} 
+	
+	else if (bac_num >= 0.07 && bac_num <= 0.09) {
+		status = "Eatin' Booty";
+	} 
+	
+	else if (bac_num >= 0.10 && bac_num <= 0.12) {
+		status = "Eatin' Booty";
+	} 
+	
+	else if (bac_num >= 0.13 && bac_num <= 0.14) {
+		status = "Eatin' Booty";
+	} 
+	
+	else if (bac_num >= 0.15 && bac_num <= 0.19) {
+		status = "Eatin' Booty";
+	} 
+	
+	else if (bac_num >= 0.20 && bac_num <= 0.24) {
+		status = "Eatin' Booty";
+	} 
+	
+	else if (bac_num >= 0.25 && bac_num <= 0.29) {
+		status = "Eatin' Booty";
+	} 
+	
+	else if (bac_num >= 0.30 && bac_num <= 0.39) {
+		status = "Eatin' Booty";
+	} 
+	
+	else if (bac_num >= 0.40) {
+		status = "Eatin' Booty";
+	}
+	return status;
 }
