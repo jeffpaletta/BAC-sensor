@@ -207,48 +207,45 @@ function getBACStatus(bac_result) {
 	var status, bac_num;
 	bac_num = Math.round(bac_result*100)/100; // round to 2 decimal places
 	
-	if (bac_num < 0.02) {
-		status = "Eatin' Ass";
-	} 
-	
-	else if (bac_num >= 0.02 && bac_num <= 0.03) {
-		status = "Eatin' Booty";
-	} 
-	
-	else if (bac_num >= 0.04 && bac_num <= 0.06) {
-		status = "Eatin' Booty";
-	} 
-	
-	else if (bac_num >= 0.07 && bac_num <= 0.09) {
-		status = "Eatin' Booty";
-	} 
-	
-	else if (bac_num >= 0.10 && bac_num <= 0.12) {
-		status = "Eatin' Booty";
-	} 
-	
-	else if (bac_num >= 0.13 && bac_num <= 0.14) {
-		status = "Eatin' Booty";
-	} 
-	
-	else if (bac_num >= 0.15 && bac_num <= 0.19) {
-		status = "Eatin' Booty";
-	} 
-	
-	else if (bac_num >= 0.20 && bac_num <= 0.24) {
-		status = "Eatin' Booty";
-	} 
-	
-	else if (bac_num >= 0.25 && bac_num <= 0.29) {
-		status = "Eatin' Booty";
-	} 
-	
-	else if (bac_num >= 0.30 && bac_num <= 0.39) {
-		status = "Eatin' Booty";
-	} 
-	
-	else if (bac_num >= 0.40) {
-		status = "Eatin' Booty";
-	}
+	 if (bac_num <= 0.02) {
+        status = "Sobriety";
+    }
+   
+    else if (bac_num > 0.02 && bac_num <= 0.09) {
+        status = "Euphoria";
+    }
+    
+    else if (bac_num > 0.09 && bac_num <= 0.12) {
+        status = "Euphoric Excitement";
+    }
+   
+    else if (bac_num > 0.12 && bac_num <= 0.13) {
+        status = "Excitement";
+    }
+   
+    else if (bac_num > 0.13 && bac_num <= 0.18) {
+        status = "Excitement";
+    }
+   
+    else if (bac_num > 0.18 && bac_num <= 0.24) {
+        status = "Excited Confusion";
+    }
+   
+    else if (bac_num > 0.24 && bac_num <= 0.35) {
+        status = "Confused Stuper";
+    }
+   
+    else if (bac_num > 0.35 && bac_num <= 0.40) {
+        status = "Stupor Coma";
+    }
+   
+    else if (bac_num > 0.40 && bac_num < 0.50) {
+        status = "Coma";
+    }
+   
+    else if (bac_num > 0.50) {
+        status = "Death";
+    }
+    
 	return status;
 }
