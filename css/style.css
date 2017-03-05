@@ -1,3 +1,13 @@
+/* FONTS */
+/*
+font-family: 'Bitter', serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+
+
+
 input.ui-slider-input {
   display: none !important;
 }
@@ -15,12 +25,17 @@ body, div {
 div.alcohol-level {
 }
 
+
 div#bac-level-wrapper {
 	padding-top: 150px;
 	padding-left: 150px;
+	border: 1px solid #f20000;
 }
 
+
+/* BAC Number Result */
 span.result {
+	font-family: 'Roboto Slab', serif;
 	font-size: 150px;
 	margin-top: 120px;
 }
@@ -29,14 +44,36 @@ div#bac-effects-wrapper {
 	padding-top: 40px;
 	text-align: center;
 	width: 100%;
+	border: 1px solid #f20000;
 	
 }
 
+
+/* Effects Text Display */
 span.effects {
 	color: white;
 	font-size: 58px;
+	font-family: 'Roboto', sans-serif;
 }
 
+
+
+div#bac-status-wrapper {
+/*
+	padding-top: 40px;
+	text-align: center;
+	width: 100%;
+*/
+	border: 1px solid #f20000;
+	
+}
+
+/* Status Text Display */
+span.status {
+	color: white;
+	font-size: 58px;
+	font-family: 'Roboto', sans-serif;
+}
 
 fieldset {
 	border: none !important;
