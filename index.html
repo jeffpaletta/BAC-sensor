@@ -7,11 +7,71 @@
   <!-- Global Stylesheets -->
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Bitter:700|Roboto|Roboto+Slab:700" rel="stylesheet">
+	<link rel="stylesheet" href="css/menu.css">
 	<link rel="stylesheet" href="css/style.css">
   
 </head>
 
 <body>
+	
+	
+<!-- Slide out Menu -->	
+	
+<div class="panel panel-black right">
+  <div class="overlay"></div>
+  <a class="ninja-btn" title="menu"><span></span></a>
+  <ul>
+	  
+    	
+    	<!-- Gender -->
+    	<li class="menu-label" id="genderMenuLabel">Gender</li>
+    	<li>
+	    	<input class="menuItem" type="text" name="gender" id="currentGender" value="male">
+			<input class="menuButton" type="button" name="genderButton" id="genderButton" value="Change" data-show-value="true" data-highlight="true">
+    	</li>
+    
+		<!-- Weight -->
+		<li class="menu-label">Weight (lbs.)</li>
+		<li>
+			<input class="menuItem" type="text" name="weightCounter" id="weightCounter" value="150" >
+            <input class="menuButton" type="button" name="weightUp" id="weightButtonAdd" value="+" data-show-value="true" data-highlight="true">  
+            <input class="menuButton" type="button" name="weightDown" id="weightButtonSubtract" value="–" data-show-value="true" data-highlight="true">                       
+
+		</li>
+		
+		<!-- Time -->
+		<li class="menu-label">Hours Drinking</li>
+		<li>
+			<input class="menuItem" type="text" name="timeCounter" id="timeCounter" value="0" />
+            <input class="menuButton" type="button" name="timeUp" id="timeButtonAdd" value="+" data-show-value="true" data-highlight="true">  
+            <input class="menuButton" type="button" name="weight" id="timeButtonSubtract" value="–" data-show-value="true" data-highlight="true">
+		</li>
+		
+		<!-- Drink Counters -->
+		<li class="menu-label drinkCountersWrapper" style="padding-bottom: 40px;">drink count</li>
+		<li class="drinkCountersWrapper">
+			<p class="drinkCounters"><input class="drinkCounterValue" type="text" name="beerCounter" id="beerCounter" value="0"> beers</p>
+			<p class="drinkCounters"><input class="drinkCounterValue" type="text" name="wineCounter" id="wineCounter" value="0" /> glasses of wine</p>
+			<p class="drinkCounters"><input class="drinkCounterValue" type="text" name="liquorCounter" id="liquorCounter" value="0" /> shots of liquor</p>
+		</li>
+		
+		<!-- Reset Button -->
+		<li style="margin-top: 50px;">
+			<input type="button" name="reset" id="resetButton" value="Reset" data-show-value="true" data-highlight="true">
+		</li>
+		
+		
+    
+  </ul>
+</div><!-- panel -->
+  
+<div class="panel-overlay"></div>
+  
+  
+  
+  
+  <!-- Calculator -->
+	
 <div data-role="page">
   <div data-role="main" class="ui-content" id="mainWrapper">
     <div class="ui-body ui-body-a ui-corner-all">
@@ -22,75 +82,35 @@
 	    <div class="alcohol-level">
           
           <div id="bac-level-wrapper">
-            <span id="bac-level" class="result"></span>
+            <span id="bac-level" class="result changeToRed"></span>
           </div> 
+          
+          <div id="bac-status-wrapper">
+            <h3 id="statusLabel">Status: <span id="bac-status" class="status changeToRed"></span></h3>
+          </div>
           
           
           <div id="bac-effects-wrapper">
             <span id="bac-effects" class="effects"></span>
           </div>
           
-          
-          <div id="bac-status-wrapper">
-            <span id="bac-status" class="status"></span>
-          </div>
-          
         </div>  
-        
-        
         
         <div class="alcohol-form">
           <form method="post" action="">
 	          
-	          
-            <fieldset>
+		  	<fieldset id="addButtonWrapper">
               
-              <label for="beer">Beers (12 fl oz)</label>
-              <input type="text" name="beerCounter" id="beerCounter" value="0" />
-              <input type="button" name="beer" id="beerButton" value="+" data-show-value="true" data-highlight="false">                            
+              <input type="button" class="add-button" name="beer" id="beerButton" data-show-value="false">                            
               
-              <label for="wine">Glasses of Wine (5 fl oz)</label>
-              <input type="text" name="wineCounter" id="wineCounter" value="0" />
-              <input type="button" name="wine" id="wineButton" value="+" data-show-value="true" data-highlight="false">                            
+              <input type="button" class="add-button" name="wine" id="wineButton" data-show-value="false">                            
               
-              <label for="liquor">Shots of Liquor (1.5 fl oz)</label>
-              <input type="text" name="liquorCounter" id="liquorCounter" value="0" />
-              <input type="button" name="liquor" id="liquorButton" value="+" data-show-value="true" data-highlight="false">
+              <input type="button" class="add-button" name="liquor" id="liquorButton" data-show-value="false">
             
-            </fieldset>   
+            </fieldset> 
             
-            
-            
-                                 
-<!--
-            <label for="gender">Select Gender</label>
-            <select name="gender" id="gender">
-              <option value="male" selected="selected">Male</option>
-              <option value="female">Female</option>
-            </select>                        
--->
-            <label for="gender">Select Gender</label>
-            <input type="text" name="gender" id="currentGender" value="male" />
-            <input type="button" name="genderButton" id="genderButton" value="Change Gender" data-show-value="true" data-highlight="true">             
-             
-             
-             
-            
-            <label for="weight">Enter Weight (lbs)</label>
-            <input type="text" name="weightCounter" id="weightCounter" value="150" />
-            <input type="button" name="weightUp" id="weightButtonAdd" value="+" data-show-value="true" data-highlight="true">  
-            <input type="button" name="weightDown" id="weightButtonSubtract" value="-" data-show-value="true" data-highlight="true">                       
-            
-            
-            <label for="time">Total Time Drinking (hrs)</label>
-            <input type="text" name="timeCounter" id="timeCounter" value="0" />
-            <input type="button" name="timeUp" id="timeButtonAdd" value="+" data-show-value="true" data-highlight="true">  
-            <input type="button" name="weight" id="timeButtonSubtract" value="-" data-show-value="true" data-highlight="true"> 
-            
-            
-            <input type="button" name="reset" id="resetButton" value="reset" data-show-value="true" data-highlight="true">
-            
-            
+            <fieldset id="textCounterResults"></fieldset> 
+
             
           </form>
         </div>
@@ -100,10 +120,12 @@
   </div>
   <div data-role="footer"></div>
 </div>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js'></script>
-
+  
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src='https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js'></script>
     <script src="js/script.js"></script>
+<!--     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script> -->
+	<script src="js/menu.js"></script>
 
 </body>
 </html>

@@ -14,6 +14,9 @@ input.ui-slider-input {
 div.ui-slider-track {
   margin: 0 15px !important;
 }
+span.ui-icon-loading {
+	display: none !important;
+}
 
 
 
@@ -22,34 +25,65 @@ body, div {
 	height: 100%;
 }   
 
-div.alcohol-level {
-}
 
 
-div#bac-level-wrapper {
-	padding-top: 150px;
-	padding-left: 150px;
-	border: 1px solid #f20000;
-}
+
+
 
 
 /* BAC Number Result */
+
+div#bac-level-wrapper {
+	position: fixed;
+	top: 15%;
+	left: 13%
+}
+
 span.result {
 	font-family: 'Roboto Slab', serif;
 	font-size: 150px;
 	margin-top: 120px;
 }
 
-div#bac-effects-wrapper {
-	padding-top: 40px;
-	text-align: center;
-	width: 100%;
-	border: 1px solid #f20000;
-	
+
+
+/* Status Display */
+
+div#bac-status-wrapper {
+	margin-top: 120px;
+	text-align: left;
+	position: fixed;
+	top: 16%;
+	left: 13.5%;
+}
+
+h3#statusLabel {
+/* 	color: black; */
+	font-size: 32px;
+	font-family: 'Roboto', sans-serif;
+}
+
+span.status {
+	color: black;
+	font-size: 32px;
+	font-family: 'Roboto', sans-serif;
 }
 
 
-/* Effects Text Display */
+
+
+/* Effects Display */
+
+div#bac-effects-wrapper {
+	position: fixed;
+	padding-top: 120px;
+	top: 35%;
+	text-align: center;
+	width: 60%;
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
 span.effects {
 	color: white;
 	font-size: 58px;
@@ -58,23 +92,303 @@ span.effects {
 
 
 
-div#bac-status-wrapper {
-/*
-	padding-top: 40px;
-	text-align: center;
-	width: 100%;
-*/
-	border: 1px solid #f20000;
-	
-}
 
-/* Status Text Display */
-span.status {
-	color: white;
-	font-size: 58px;
-	font-family: 'Roboto', sans-serif;
-}
+
+
+
+
 
 fieldset {
 	border: none !important;
 }
+
+
+
+fieldset#textCounterResults{
+	margin-top: 100px;
+}
+
+
+/* div#addButtonWrapper { */
+div.alcohol-form {
+	display: block;
+	position: fixed !important;
+/* 	margin-left: auto; */
+/* 	margin-right: auto; */
+	top: 78% !important;
+	left: 40% !important;
+	width: 35% !important;
+}
+
+div.addButtonContainer {
+	display: block;
+}
+
+
+
+
+
+
+input.add-button {
+	background: none;
+	display: inline-block;
+	text-indent:-9999px;
+	margin-left: 30px;
+	float: left;
+	width: 90px;
+	height: 90px;
+	-webkit-border-radius: 22;
+	-moz-border-radius: 22;
+	border-radius: 22px;
+	font-family: "Roboto";
+	color: #ffffff;
+	font-size: 24px;
+/*   padding: 40px 15px 40px 15px; */
+  	border: none !important;
+  	text-decoration: none;
+}
+
+input.add-button:hover {
+	background: #ffffff;
+
+}
+
+
+input#beerButton {
+	background-image: url("http://www.jeffpaletta.com/assets/BAC-buttons/beer-button-white-bold.png") !important;
+ 	background-repeat: no-repeat; 
+	}
+
+input#wineButton {
+	background-image: url("http://www.jeffpaletta.com/assets/BAC-buttons/wine-button-white-bold.png") !important;
+	background-repeat: no-repeat;
+	}
+
+input#liquorButton {
+	background-image: url("http://www.jeffpaletta.com/assets/BAC-buttons/liquor-button-white-bold.png") !important;
+	background-repeat: no-repeat; 
+	}
+
+
+
+
+
+
+
+
+
+
+/* SHITTY OLD IPAD PORTRAIT */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
+	
+	div.alcohol-form {
+		left: 30% !important;
+		width: 40% !important;
+		}
+	
+}
+
+
+
+
+/* SHITTY OLD IPAD LANDSCAPE */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+	
+/* BAC Number Result */
+	div#bac-level-wrapper {
+		top: 15%;
+		left: 13%
+		}
+	
+	span.result {
+		font-size: 90px;
+		margin-top: 120px;
+		}
+	
+/* Status Display */
+	div#bac-status-wrapper {
+		margin-top: 120px;
+		top: 8%;
+		left: 13.5%;
+		}
+	
+	h3#statusLabel {
+		font-size: 21px;
+		font-family: 'Roboto', sans-serif;
+		}
+	
+	span.status {
+		color: black;
+		font-size: 21px;
+		font-family: 'Roboto', sans-serif;
+		}
+	
+/* Effects Display */
+	div#bac-effects-wrapper {
+		padding-top: 120px;
+		top: 25%;
+		width: 60%;
+		padding-left: 20%;
+		padding-right: 20%;
+		}
+	
+	span.effects {
+		color: white;
+		font-size: 36px;
+		}
+		
+		
+	div.alcohol-form {
+		top: 78% !important;
+		left: 37.5% !important;
+		width: 30% !important;
+		}
+	
+	input.add-button {
+		margin-left: 15px;
+		width: 60px;
+		height: 60px;
+		}
+	
+	input#beerButton {
+		background-image: url("http://www.jeffpaletta.com/assets/BAC-buttons/beer-button-white-60.png") !important;
+		}
+	
+	input#wineButton {
+		background-image: url("http://www.jeffpaletta.com/assets/BAC-buttons/wine-button-white-60.png") !important;
+		}
+	
+	input#liquorButton {
+		background-image: url("http://www.jeffpaletta.com/assets/BAC-buttons/liquor-button-white-60.png") !important;
+		}
+	
+	
+}
+
+
+
+
+
+
+
+
+/* IPHONE 7  PORTRAIT */
+@media only screen and (max-device-width : 760px) and (orientation : portrait) {
+	
+	div.alcohol-form {
+		top: 78% !important;
+		left: 30% !important;
+		width: 50% !important;
+		}
+	
+	input.add-button {
+		margin-left: 15px;
+		width: 100px;
+		height: 100px;
+		-webkit-border-radius: 2 !important;
+		-moz-border-radius: 2 !important;
+		border-radius: 2px !important;
+		}
+		
+	input#beerButton {
+		background-image: url("http://www.jeffpaletta.com/assets/BAC-buttons/beer-button-white-100.png") !important;
+		}
+	
+	input#wineButton {
+		background-image: url("http://www.jeffpaletta.com/assets/BAC-buttons/wine-button-white-100.png") !important;
+		}
+	
+	input#liquorButton {
+		background-image: url("http://www.jeffpaletta.com/assets/BAC-buttons/liquor-button-white-100.png") !important;
+		}
+	
+}
+
+
+
+/* IPHONE 7 LANDSCAPE */
+@media only screen and (max-device-width : 760px) and (orientation : landscape) {
+	
+	
+	/* BAC Number Result */
+	div#bac-level-wrapper {
+		top: 12%;
+		left: 13%
+		}
+	
+	span.result {
+		font-size: 70px;
+		margin-top: 50px;
+		}
+	
+/* Status Display */
+	div#bac-status-wrapper {
+		margin-top: 90px;
+		top: 5%;
+		left: 13.5%;
+		}
+	
+	h3#statusLabel {
+		font-size: 18px;
+		font-family: 'Roboto', sans-serif;
+		}
+	
+	span.status {
+		color: black;
+		font-size: 21px;
+		font-family: 'Roboto', sans-serif;
+		}
+	
+/* Effects Display */
+	div#bac-effects-wrapper {
+		padding-top: 120px;
+		top: 20%;
+		width: 60%;
+		padding-left: 20%;
+		padding-right: 20%;
+		}
+	
+	span.effects {
+		color: white;
+		font-size: 30px;
+		}
+		
+		
+	div.alcohol-form {
+		top: 78% !important;
+		left: 37.5% !important;
+		width: 30% !important;
+		}
+	
+	input.add-button {
+		margin-left: 15px;
+		width: 60px;
+		height: 60px;
+		}
+	
+	input#beerButton {
+		background-image: url("http://www.jeffpaletta.com/assets/BAC-buttons/beer-button-white-60.png") !important;
+		}
+	
+	input#wineButton {
+		background-image: url("http://www.jeffpaletta.com/assets/BAC-buttons/wine-button-white-60.png") !important;
+		}
+	
+	input#liquorButton {
+		background-image: url("http://www.jeffpaletta.com/assets/BAC-buttons/liquor-button-white-60.png") !important;
+		}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+

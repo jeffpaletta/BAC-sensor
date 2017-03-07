@@ -1,0 +1,751 @@
+html {
+	height:100%;
+	}
+
+html,body {
+	width:100%;
+	overflow-x:hidden;
+	}
+
+body {
+	min-height:100%;
+	position:relative;
+	font-family:'Roboto',sans-serif;
+	margin:0;
+	-webkit-background-size:cover;
+	background-position:right center;
+	}
+
+a {
+	cursor:pointer;
+	}
+
+.border-box {
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	}
+
+.panel {
+	-webkit-transition:.2s;
+	-moz-transition:.2s;
+	-o-transition:.2s;
+	transition:.2s;
+	transition:all .2s ease-in-out;
+	-webkit-transition:all .2s ease-in-out;
+	-moz-transition:all .2s ease-in-out;
+	-o-transition:all .2s ease-in-out;
+	-ms-transition:all .2s ease-in-out;
+	position:fixed;
+	z-index:9999;
+	top:0;
+	height:100%;
+	width:450px;
+	}
+
+.panel ul {
+	list-style-type:none;
+	position:absolute;
+	z-index:1;
+	margin:0;
+	padding:0;
+	top:50%;
+	left:60px;
+	right:60px;
+	height:auto;
+	text-align:left;
+	}
+
+.panel ul li,
+.panel ul a {
+	display:inline-block;
+	float:left;
+	width:100%;
+	line-height:1.4;
+	padding:0;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow:hidden;
+	}
+
+.panel ul li.menu-label {
+	font-size:15px;
+	color:#323232!important;
+	text-transform:lowercase!important;
+	font-weight:100;
+	margin:30px 0 0 10px;
+	text-transform:lowercase;
+	margin-top:50px!important;
+	text-align:left!important;
+	}
+
+.panel ul li.menu-label:first-child {
+	margin-top:0;
+	}
+
+.panel ul a {
+	font-size:22px;
+	text-transform:uppercase;
+	}
+
+.panel .ninja-btn {
+	-webkit-transition:.2s;
+	-moz-transition:.2s;
+	-o-transition:.2s;
+	transition:.2s;
+	transition:all .2s ease-in-out;
+	-webkit-transition:all .2s ease-in-out;
+	-moz-transition:all .2s ease-in-out;
+	-o-transition:all .2s ease-in-out;
+	-ms-transition:all .2s ease-in-out;
+	display:inline-block;
+	float:left;
+	cursor:pointer;
+	padding:34.28571429px 30px;
+	position:absolute;
+	margin-top:20px;
+	margin-right:20px;
+	z-index:2;
+	top:0;
+	width:calc(30px * 1.5);
+	height:calc(20.18181818px * 1.5);
+}
+
+.panel .ninja-btn span,
+.panel .ninja-btn span:before,
+.panel .ninja-btn span:after {
+	-webkit-transition:.3s;
+	-moz-transition:.3s;
+	-o-transition:.3s;
+	transition:.3s;
+	transition:all .3s ease-in-out;
+	-webkit-transition:all .3s ease-in-out;
+	-moz-transition:all .3s ease-in-out;
+	-o-transition:all .3s ease-in-out;
+	-ms-transition:all .3s ease-in-out;
+	width:30px;
+	height:2px;
+	}
+
+.panel .ninja-btn span {
+	position:relative;
+	display:inline-block;
+	float:left;
+	margin-top:9.09090909px;
+	}
+
+.panel .ninja-btn span:before,
+.panel .ninja-btn span:after {
+	content:"";
+	position:absolute;
+	left:0;
+	}
+
+.panel .ninja-btn span:before {
+	top:-9.09090909px;
+	}
+
+.panel .ninja-btn span:after {
+	top:9.09090909px;
+	}
+
+.panel .ninja-btn.active span {
+	background-color:transparent;
+	}
+
+.panel .ninja-btn.active span:before,.panel .ninja-btn.active span:after {
+	top:0;
+	}
+
+.panel .ninja-btn.active span:before {
+	transform:rotate(-135deg);
+	-webkit-transform:rotate(-135deg);
+	-moz-transform:rotate(-135deg);
+	-o-transform:rotate(-135deg);
+	-ms-transform:rotate(-135deg);
+	}
+
+.panel .ninja-btn.active span:after {
+	-webkit-transition-delay:.09s;
+	-moz-transition-delay:.09s;
+	-o-transition-delay:.09s;
+	-msa-transition-delay:.09s;
+	transition-delay:.09s;
+	transform:rotate(135deg);
+	-webkit-transform:rotate(135deg);
+	-moz-transform:rotate(135deg);
+	-o-transform:rotate(135deg);
+	-ms-transform:rotate(135deg);
+	}
+
+.panel-overlay {
+	position:fixed;
+	top:0;
+	z-index:9998;
+	width:100%;
+	height:100%;
+	display:none;
+	background-color:rgba(0,0,0,0.35);
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(0,0,0,0.05)),color-stop(100%,rgba(0,0,0,0.6)));
+	cursor:pointer;
+	}
+
+
+.panel-black {
+	background-color:rgba(0,0,0,0.85);
+	}
+
+.panel-black ul li,
+.panel-black ul a {
+	color:rgba(255,255,255,0.5);
+	}
+
+.panel-black ul li a:hover,
+.panel-black ul li.active a {
+	color:#FFF;
+	}
+
+.panel-black .ninja-btn {
+	background-color:none;
+	}
+
+.panel-black .ninja-btn span,
+.panel-black .ninja-btn span:before,
+.panel-black .ninja-btn span:after {
+	background-color:#fff;
+	}
+
+
+
+.panel.right {
+	right:-450px;
+	}
+
+.panel.right .ninja-btn {
+	right:100%;
+	}
+
+.panel.right.active {
+	right:0;
+	}
+
+.panel.right.active .ninja-btn {
+	right:100%;
+	margin-right:-90px;
+	}
+
+input#currentGender,
+input#weightCounter,
+p.measurement,
+input#timeCounter {
+	display:inline-block!important;
+	color:#fff!important;
+	padding-left:10px!important;
+	margin-top:20px!important;
+	font-size:48px!important;
+	border:none!important;
+	max-width:200px!important;
+	box-sizing:content-box;
+	text-transform:capitalize!important;
+	font-family:'Roboto',sans-serif;
+	background:none!important;
+	}
+
+input#genderButton,
+input#weightButtonAdd,
+input#weightButtonSubtract,
+input#timeButtonAdd,
+input#timeButtonSubtract,
+input#resetButton {
+	font-family:'Roboto',sans-serif;
+	border:1px solid #bbb!important;
+	background:none!important;
+	margin-top:20px!important;
+	padding:10px!important;
+	font-size:24px!important;
+	color:#bbb!important;
+	text-transform:none!important;
+	vertical-align:top!important;
+	}
+
+input#genderButton:hover,
+input#weightButtonAdd:hover,
+input#weightButtonSubtract:hover,
+input#timeButtonAdd:hover,
+input#timeButtonSubtract:hover,
+input#resetButton:hover {
+	background:#bbb!important;
+	}
+
+input#genderButton {
+	font-weight:100!important;
+	font-family:"Helvetica",sans-serif;
+	}
+
+input#weightButtonAdd {
+	padding:10px 15px!important;
+	}
+
+input#weightButtonSubtract {
+	padding:10px 15px!important;
+	margin-left:10px!important;
+	}
+
+input#timeButtonAdd {
+	padding:10px 15px!important;
+	}
+
+input#timeButtonSubtract {
+	padding:10px 15px!important;
+	margin-left:10px!important;
+	}
+
+input#resetButton {
+	font-weight:100!important;
+	font-size:18px!important;
+	font-family:"Helvetica",sans-serif!important;
+	float:right!important;
+	}
+
+p.measurement {
+	padding-left:0!important;
+	margin-left:0!important;
+	text-transform:none!important;
+	}
+
+.panel input.menuItem {
+	}
+
+.panel li p {
+	font-size:34px!important;
+	color:#fff!important;
+	font-family:'Roboto',sans-serif;
+	padding-left:5px;
+	line-height:24px!important;
+	padding-top:0!important;
+	margin-top:0!important;
+	}
+
+input.drinkCounterValue {
+	border:none!important;
+	background:none!important;
+	box-sizing:content-box;
+	font-family:'Roboto',sans-serif;
+	font-size:36px!important;
+	color:#fff!important;
+	text-transform:none!important;
+	display:inline;
+	max-width:30px!important;
+	text-align:center!important;
+	line-height:24px!important;
+	}
+
+p.drinkCounters,input.drinkCounterValue {
+	max-width:25px!important;
+	padding-left:0!important;
+	margin-bottom:0!important;
+	line-height:15px!important;
+	padding-bottom:0!important;
+	}
+
+
+
+
+
+
+
+
+
+/* SHITTY OLD IPAD PORTRAIT */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+	input#currentGender,input#weightCounter,input#timeCounter {
+		max-width:180px!important;
+	}
+	
+	input#genderButton,input#weightButtonAdd,input#weightButtonSubtract,input#timeButtonAdd,input#timeButtonSubtract {
+		margin-top:30px!important;
+	}
+	
+	p.drinkCounters,input.drinkCounterValue {
+		max-width:25px!important;
+		padding-left:0!important;
+		margin-bottom:0!important;
+		line-height:15px!important;
+		padding-bottom:0!important;
+	}
+	
+	input#resetButton {
+		margin-right:8px!important;
+		margin-top:40px!important;
+	}
+}
+
+/* SHITTY OLD IPAD LANDSCAPE */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+	
+	
+	.panel {
+		width:450px;
+		}
+	
+	.panel ul {
+		top:50%;
+		left:100px;
+		right:60px;
+		height:auto;
+		}
+	
+	.panel ul li.menu-label {
+		font-size:15px;
+		color:#323232!important;
+		margin:15px 0 0 5px;
+		margin-top:10px!important;
+		}
+		
+	.panel ul a {
+		font-size:22px;
+		}
+		
+	.panel.right {
+		right:-450px;
+		}
+	
+	.panel.right.active {
+		right:0;
+		}
+	
+	.panel.right.active .ninja-btn {
+		margin-right:-90px;
+		}
+	
+	input#currentGender,
+	input#weightCounter,
+	p.measurement,
+	input#timeCounter {
+		padding-left:10px!important;
+		margin-top:10px!important;
+		font-size:36px!important;
+		max-width:150px!important;
+		}
+
+	input#genderButton,
+	input#weightButtonAdd,
+	input#weightButtonSubtract,
+	input#timeButtonAdd,
+	input#timeButtonSubtract,
+	input#resetButton {
+		margin-top:20px!important;
+		padding:10px!important;
+		font-size:18px!important;
+		}
+		
+	li#genderMenuLabel {
+		margin-top: 50px !important;
+		}
+		
+	input#weightButtonAdd {
+		padding:10px 15px!important;
+		}
+	
+	input#weightButtonSubtract {
+		padding:10px 15px!important;
+		margin-left:10px!important;
+		}
+	
+	input#timeButtonAdd {
+		padding:10px 15px!important;
+		}
+	
+	input#timeButtonSubtract {
+		padding:10px 15px!important;
+		margin-left:10px!important;
+		}
+	
+	input#resetButton {
+		font-size:18px!important;
+		margin-top: 0px !important;
+		}
+	
+	p.measurement {
+		padding-left:0!important;
+		margin-left:0!important;
+		}
+	
+	.panel li p {
+		font-size:24px!important;
+		padding-left:5px;
+		line-height:18px!important;
+		padding-top:0!important;
+		margin-top:0!important;
+		}
+	
+	input.drinkCounterValue {
+		font-size:24px!important;
+		max-width:15px!important;
+		line-height:18px!important;
+		}
+	
+	p.drinkCounters,input.drinkCounterValue {
+		max-width:15px!important;
+		padding-left:0!important;
+		margin-bottom:0!important;
+		line-height:15px!important;
+		padding-bottom:0!important;
+		}
+}
+
+
+
+
+
+
+
+
+/* IPHONE PORTRAIT */
+@media only screen and (max-device-width : 760px) and (orientation : portrait) {
+	
+	
+	.panel {
+		width:450px;
+		}
+	
+	.panel ul {
+		top:50%;
+		left:100px;
+		right:60px;
+		height:auto;
+		}
+	
+	.panel ul li.menu-label {
+		font-size:15px;
+		color:#323232!important;
+		margin:15px 0 0 5px;
+		margin-top:10px!important;
+		}
+		
+	.panel ul a {
+		font-size:22px;
+		}
+		
+	.panel.right {
+		right:-450px;
+		}
+	
+	.panel.right.active {
+		right:0;
+		}
+	
+	.panel.right.active .ninja-btn {
+		margin-right:-90px;
+		}
+	
+	input#currentGender,
+	input#weightCounter,
+	p.measurement,
+	input#timeCounter {
+		padding-left:10px!important;
+		margin-top:10px!important;
+		font-size:36px!important;
+		max-width:150px!important;
+		}
+
+	input#genderButton,
+	input#weightButtonAdd,
+	input#weightButtonSubtract,
+	input#timeButtonAdd,
+	input#timeButtonSubtract,
+	input#resetButton {
+		margin-top:20px!important;
+		padding:10px!important;
+		font-size:18px!important;
+		}
+		
+	li#genderMenuLabel {
+		margin-top: 50px !important;
+		}
+		
+	input#weightButtonAdd {
+		padding:10px 15px!important;
+		}
+	
+	input#weightButtonSubtract {
+		padding:10px 15px!important;
+		margin-left:10px!important;
+		}
+	
+	input#timeButtonAdd {
+		padding:10px 15px!important;
+		}
+	
+	input#timeButtonSubtract {
+		padding:10px 15px!important;
+		margin-left:10px!important;
+		}
+	
+	input#resetButton {
+		font-size:18px!important;
+		margin-top: 0px !important;
+		}
+	
+	p.measurement {
+		padding-left:0!important;
+		margin-left:0!important;
+		}
+	
+	.panel li p {
+		font-size:24px!important;
+		padding-left:5px;
+		line-height:18px!important;
+		padding-top:0!important;
+		margin-top:0!important;
+		}
+	
+	input.drinkCounterValue {
+		font-size:24px!important;
+		max-width:15px!important;
+		line-height:18px!important;
+		}
+	
+	p.drinkCounters,input.drinkCounterValue {
+		max-width:15px!important;
+		padding-left:0!important;
+		margin-bottom:0!important;
+		line-height:15px!important;
+		padding-bottom:0!important;
+		}
+}
+
+
+
+/* IPHONE PORTRAIT */
+@media only screen and (max-device-width : 760px) and (orientation : landscape) {
+	
+	.panel {
+		width:450px;
+		}
+	
+	.panel ul {
+		top:50%;
+		left:100px;
+		right:60px;
+		height:auto;
+		}
+	
+	.panel ul li.menu-label {
+		font-size:15px;
+		color:#323232!important;
+		margin:15px 0 0 5px;
+		margin-top:10px!important;
+		}
+		
+	.panel ul a {
+		font-size:22px;
+		}
+		
+	.panel.right {
+		right:-450px;
+		}
+	
+	.panel.right.active {
+		right:0;
+		}
+	
+	.panel.right.active .ninja-btn {
+		margin-right:-90px;
+		}
+	
+	input#currentGender,
+	input#weightCounter,
+	p.measurement,
+	input#timeCounter {
+		padding-left:10px!important;
+		margin-top:10px!important;
+		font-size:36px!important;
+		max-width:150px!important;
+		}
+
+	input#genderButton,
+	input#weightButtonAdd,
+	input#weightButtonSubtract,
+	input#timeButtonAdd,
+	input#timeButtonSubtract,
+	input#resetButton {
+		margin-top:20px!important;
+		padding:10px!important;
+		font-size:18px!important;
+		}
+		
+	li#genderMenuLabel {
+		margin-top: 10px !important;
+		}
+		
+	input#weightButtonAdd {
+		padding:10px 15px!important;
+		}
+	
+	input#weightButtonSubtract {
+		padding:10px 15px!important;
+		margin-left:10px!important;
+		}
+	
+	input#timeButtonAdd {
+		padding:10px 15px!important;
+		}
+	
+	input#timeButtonSubtract {
+		padding:10px 15px!important;
+		margin-left:10px!important;
+		}
+	
+	input#resetButton {
+		font-size:18px!important;
+		margin-top: 0px !important;
+		}
+	
+	p.measurement {
+		padding-left:0!important;
+		margin-left:0!important;
+		}
+	
+	.panel li p {
+		font-size:24px!important;
+		padding-left:5px;
+		line-height:18px!important;
+		padding-top:0!important;
+		margin-top:0!important;
+		}
+	
+	input.drinkCounterValue {
+		font-size:24px!important;
+		max-width:15px!important;
+		line-height:18px!important;
+		}
+	
+	p.drinkCounters,
+	input.drinkCounterValue {
+		max-width:15px!important;
+		padding-left:0!important;
+		margin-bottom:0!important;
+		line-height:15px!important;
+		padding-bottom:0!important;
+		}
+		
+		
+	li.drinkCountersWrapper {
+		max-width: 1px !important;
+		max-height: 1px !important;
+		position: absolute !important;
+		margin-left: 9999px !important;
+	}
+	
+}
+	
+	
+	
+	
+	
+	
+	
+	
